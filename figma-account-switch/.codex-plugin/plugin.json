@@ -1,0 +1,34 @@
+{
+  "name": "figma-account-switch",
+  "version": "0.1.1",
+  "license": "MIT",
+  "repository": "https://github.com/snest007/figma-account-switch",
+  "homepage": "https://github.com/snest007/figma-account-switch#readme",
+  "requires_local_executor": true,
+  "description": "在 Codex 中管理和切换多个独立 Figma MCP 账号，附带账号面板。",
+  "author": {
+    "name": "qiang"
+  },
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Figma Accounts",
+    "shortDescription": "用账号面板管理和切换 Figma 连接",
+    "longDescription": "为每个 Figma 账号保留独立授权，通过“使用此账号”自动检查授权并切换连接。支持 MCP Apps 内嵌界面与宿主主题。固定操作在本地执行，不调用模型，不修改 Codex 的模型或网关。",
+    "developerName": "qiang",
+    "category": "Productivity",
+    "capabilities": [
+      "Interactive",
+      "Read",
+      "Write"
+    ],
+    "defaultPrompt": [
+      "打开 Figma 账号管理面板",
+      "添加一个 Figma 账号",
+      "检查当前 Figma 账号和连接状态"
+    ],
+    "brandColor": "#292929",
+    "composerIcon": "./assets/icon.png",
+    "logo": "./assets/icon.png"
+  },
+  "mcpServers": "./.mcp.json"
+}

@@ -1,0 +1,21 @@
+{
+  "name": "figma-account-switch",
+  "version": "0.1.1",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/snest007/figma-account-switch.git"
+  },
+  "homepage": "https://github.com/snest007/figma-account-switch#readme",
+  "private": true,
+  "type": "module",
+  "engines": { "node": ">=22" },
+  "scripts": {
+    "start": "node scripts/service.mjs",
+    "panel": "node scripts/panel.mjs",
+    "mcp": "node scripts/mcp.mjs",
+    "doctor": "node scripts/doctor.mjs",
+    "stop": "node scripts/stop-service.mjs",
+    "test": "node --test test/*.test.mjs"
+  }
+}

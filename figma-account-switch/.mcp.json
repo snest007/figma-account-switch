@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "figma_accounts": {
+      "command": "node",
+      "args": ["./scripts/mcp.mjs"],
+      "cwd": "."
+    }
+  }
+}

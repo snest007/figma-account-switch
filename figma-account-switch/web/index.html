@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <title>Figma Accounts</title>
+  <link rel="stylesheet" href="/style.css">
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <main class="panel" aria-label="Figma 账号管理">
+    <header class="header">
+      <div class="brand-mark" aria-hidden="true">⇄</div>
+      <div class="brand"><h1>Figma Accounts</h1><p>账号与连接</p></div>
+      <span class="local-badge"><span></span>本地运行</span>
+    </header>
+    <section class="content">
+      <div class="section-heading"><h2>我的账号</h2><div class="section-tools"><span id="account-count">正在连接…</span><button type="button" class="button" id="add-account">＋ 添加账号</button></div></div>
+      <div id="accounts" class="accounts" aria-live="polite"><div class="loading">正在读取 Codex 配置…</div></div>
+      <div class="connection-status" id="connection-status" aria-live="polite"></div>
+      <div class="notice" id="hosted-notice" hidden><strong>官方 Figma 连接仍在启用</strong><p>它使用独立的账号授权。点击“使用此账号”时，会提示停用这条连接，避免调用到其他账号。</p></div>
+      <section id="oauth-job" class="oauth-job" hidden aria-live="polite"></section>
+      <div id="result" class="result" hidden role="status"><div id="result-message"></div><button type="button" class="text-button" id="copy-check" hidden>复制验证指令</button></div>
+      <div class="footer-actions"><button type="button" class="text-button" id="refresh">刷新账号状态</button><button type="button" class="text-button" id="restore" hidden>恢复切换前的设置</button></div>
+    </section>
+    <footer class="command-area"><div class="command-label">对应的对话指令</div><p id="command">查看已添加的 Figma 账号，以及当前选中的连接配置。</p><div class="privacy-line">固定操作不调用模型 <span aria-hidden="true">·</span> 授权由 Codex 管理</div></footer>
+  </main>
+  <div class="environment" id="environment"></div>
+  <dialog id="account-dialog" aria-labelledby="dialog-title">
+    <form id="account-form">
+      <div class="dialog-heading"><h2 id="dialog-title">添加 Figma 账号</h2><button type="button" class="close-button" id="close-dialog" aria-label="关闭">×</button></div>
+      <p id="dialog-description">为账号起个名字，然后在浏览器中选择对应的 Figma 账号授权。</p>
+      <div id="label-field"><label for="account-label">账号名称</label><input id="account-label" maxlength="40" placeholder="例如：工作账号、个人账号" autocomplete="off"></div>
+      <div id="dialog-extra" class="dialog-extra" hidden></div>
+      <p id="dialog-error" class="error-text" role="alert" hidden></p>
+      <div class="dialog-footer"><button class="button" type="button" id="cancel-dialog">取消</button><button class="button primary" type="submit" id="dialog-submit">添加并授权</button></div>
+    </form>
+  </dialog>
+</body>
+</html>
